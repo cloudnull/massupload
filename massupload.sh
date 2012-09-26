@@ -156,6 +156,8 @@ IFS=$0
 CHECKCONTAINER=$( curl -s -X GET -D - -H "X-Storage-Token: ${TOKEN}" ${STORAGEURL}/${CONTAINER} | grep -i 'http\/[0-9]\.[0-9] 4[0-9][0-9]' )
 CONTAINEROBJECTAMOUNT=$( curl -s -X HEAD -D - -H "X-Storage-Token: ${TOKEN}" ${STORAGEURL}/${CONTAINER} | col -b | grep "X-Container-Object-Count:" | awk '{print $2}' )
 
+echo -e "You uploaded $OBJECTAMOUNT\nWe found $CONTAINEROBJECTAMOUNT uploaded to your cloud files container $CONTAINER\n"
+
 if [ ! "$CHECKCONTAINER" ];then
     echo -e "Here are the stats on the container that you uploaded too.\n"
     curl -s -X HEAD -D - -H "X-Storage-Token: ${TOKEN}" ${STORAGEURL}/${CONTAINER}
