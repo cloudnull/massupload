@@ -4,10 +4,10 @@ Mass Upload to Cloud Files
 This is a Linux/Unix shell script that uses a 'loop' to upload all files from a directory that you specify to a container that you specified.
 
 Requirements : 
-  Python 2.6 + 
-  Python Module "simplejson"
-  Curl 
-  bash 3.0 + 
+  * Python 2.6 + 
+  * Python Module "simplejson"
+  * Curl 
+  * bash 3.0 + 
 
 
 Download the script, run it on your system.
